@@ -26,16 +26,29 @@ When Landslides Strike
 
 Апликацијата се состои од почетен панел и 2 опции за избор од менито, информативен панел и панел за додавање на локација. За полесна интеракција со корисникот, од стартување до излез од апликацијата, менито е достапно, т.е. е прикажано на левата страна од формата, со тоа што ја менува бојата кога маусот е позициониран над некој избор и кога ќе биде направен избор.
  
+ ![menu](https://github.com/gerasimoska/WhenLandslidesStrike/blob/master/img/menu.PNG)
+ 
  Исто така, апликацијата има и background музика, која според психолозите му овозможува подобра концентрација на корисникот при фокусирање на задачата.
 Почетниот панел го прикажува логото на апликацијата BE INFORMED, SAVE YOURSELF!
+
+![start](https://github.com/gerasimoska/WhenLandslidesStrike/blob/master/img/start.PNG)
  
 Со избор на Information опцијата од менито се прикажува информативниот панел. Тој содржи Text box и Picture box во кој на корисникот му се нудат информации за што претставува лизгањето на земјиште, кои се причините за настанување, што е главниот проблем и кое е решението за него.
+
+![information](https://github.com/gerasimoska/WhenLandslidesStrike/blob/master/img/information.PNG)
  
 Со избор на Add New Location опцијата од менито се прикажува панелот за додавање на локација. Од левата страна има Text box во кој корисникот може да внесе држава за која сака да ги провери претходно случените лизгања на земјиштето. 
+
+![addNewLocation](https://github.com/gerasimoska/WhenLandslidesStrike/blob/master/img/addNewLocation.PNG)
  
 Кога ќе биде внесено името на државата, со кликање на Enter копчето на тастатурата или клик на OK копчето се прикажуваат податоците во List box-от на десната страна. Во List box-от се прикажани сите лизгања на земјиштето кои се случиле во таа држава, кои се претходно евидентирани во базата од NASA. За секое од нив се прикажува датата, локацијата и точната геолокација. Од кликање на ОК копчето до приказ на податоците (околу 8 секунди), Progress bar-от се “полни”, т.е. визуелно му покажува на корисникот дека апликацијата не е во мирување, туку дека некои дејствија се вршат во позадина. Во секое време може да се внесе друга држава во Text box-от наменет за тоа и да се прикажат соодветните податоци за неа во List box-от. 
+
+![addNewLocationExample](https://github.com/gerasimoska/WhenLandslidesStrike/blob/master/img/addNewLocationExample.PNG)
+![addNewLocationExample1](https://github.com/gerasimoska/WhenLandslidesStrike/blob/master/img/addNewLocationExample1.PNG)
   
-При внесување на празен стринг или нешто што не претставува стринг, т.е. не е во соодветниот предвиден формат, се појавува Message Box кој му сугерира на корисникот да внесе соодветни податоци. 
+При внесување на празен стринг или нешто што не претставува стринг, т.е. не е во соодветниот предвиден формат, се појавува Message Box кој му сугерира на корисникот да внесе соодветни податоци.
+
+![messageBox](https://github.com/gerasimoska/WhenLandslidesStrike/blob/master/img/messageBox.PNG)
  
 Доколку корисникот се предомисли и не сака да внесе нова локација, со кликање на Escape копчето на тастатурата или клик на CANCEL копчето се враќа на почетниот панел.
-Апликацијата се обраќа до online неструктурираната база на податоци со JSON објекти (сложени објекти) од NASA, прави request, и со помош на JSON parser и соодветни класи во Place.cs и Functions.cs и ф-циите кои ги содржат, ги превзема и прави објекти кои ги чува. За секој објект се чува adminname1, adminname2, cat_id, cat_src, changeset_id, continentcode, countrycode, countryname, date, distance, fatalities, geolocation, hazard_type, id, injuries, key, landslide_size, landslide_type, latitude, location_accuracy, location_description, longitude, near, nearest_RootObjects, population, source_link, source_name, storm_name, trigger, tstamp, version. Вредноста на Text box полето се споредува со countryname на објектите кои ги имаме и сите објекти за кои се еднакви (лизгањата на земјиште кои се случиле во внесената држава) се прикажуваат. Со преоптоварување на ToString се репрезентира соодветниот формат на принтање на објектите, т.е. дата, локација и точна геолокација. Со секое кликање на OK или CANCEL копчињата, или бирање на друга опција од менито, List box-от се брише.
+Апликацијата се обраќа до online неструктурираната база на податоци со JSON објекти (сложени објекти) од NASA, прави request, и со помош на JSON parser и соодветни класи во Place.cs и Functions.cs и функциите кои ги содржат, ги превзема и прави објекти кои ги чува. За секој објект се чува adminname1, adminname2, cat_id, cat_src, changeset_id, continentcode, countrycode, countryname, date, distance, fatalities, geolocation, hazard_type, id, injuries, key, landslide_size, landslide_type, latitude, location_accuracy, location_description, longitude, near, nearest_RootObjects, population, source_link, source_name, storm_name, trigger, tstamp, version. Вредноста на Text box полето се споредува со countryname на објектите кои ги имаме и сите објекти за кои се еднакви (лизгањата на земјиште кои се случиле во внесената држава) се прикажуваат. Со преоптоварување на ToString се репрезентира соодветниот формат на принтање на објектите, т.е. дата, локација и точна геолокација. Со секое кликање на OK или CANCEL копчињата, или бирање на друга опција од менито, List box-от се брише.
